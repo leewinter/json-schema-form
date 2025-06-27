@@ -241,7 +241,6 @@ export const Basic: StoryObj = {
       />
     );
   },
-
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
