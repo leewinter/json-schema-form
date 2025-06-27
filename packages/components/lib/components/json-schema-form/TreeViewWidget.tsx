@@ -9,7 +9,7 @@ interface TreeViewWidgetProps {
 }
 
 export default function TreeViewWidget({ id, value, onChange }: TreeViewWidgetProps) {
-  const handleSelect = (event: React.SyntheticEvent, nodeId: string) => {
+  const handleSelect = (_event: React.SyntheticEvent, nodeId: string) => {
     onChange(nodeId); // sets selected nodeId into form data
   };
 

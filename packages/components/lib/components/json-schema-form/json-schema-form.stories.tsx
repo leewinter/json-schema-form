@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import JsonSchemaForm, { JsonSchemaFormProps } from './json-schema-form';
+import JsonSchemaForm from './json-schema-form';
 import { userEvent, within, expect, fn } from '@storybook/test';
 import Box from '@mui/material/Box';
 import { action } from '@storybook/addon-actions';
@@ -229,17 +229,20 @@ export const Basic: StoryObj = {
       email: '',
     },
   },
-  render: args => (
-    <JsonSchemaForm
-      {...args}
-      schema={args.schema}
-      onSubmit={val => handleSubmitBasic(val)}
-      onChange={val => action('onChange')(val)}
-      onError={val => action('onError')(val)}
-    />
-  ),
+  render: args => {
+    const schema = { ...args } as RJSFSchema;
+    return (
+      <JsonSchemaForm
+        {...args}
+        schema={schema}
+        onSubmit={val => handleSubmitBasic(val)}
+        onChange={val => action('onChange')(val)}
+        onError={val => action('onError')(val)}
+      />
+    );
+  },
 
-  play: async ({ canvasElement, args }) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
     const nameInput = await canvas.findByRole('textbox', { name: /name/i });
@@ -278,15 +281,18 @@ export const ValidationErrorExample: StoryObj = {
       email: '',
     },
   },
-  render: args => (
-    <JsonSchemaForm
-      {...args}
-      schema={args.schema}
-      onSubmit={handleSubmit}
-      onError={handleError}
-      onChange={val => action('onChange')(val)}
-    />
-  ),
+  render: args => {
+    const schema = { ...args } as RJSFSchema;
+    return (
+      <JsonSchemaForm
+        {...args}
+        schema={schema}
+        onSubmit={handleSubmit}
+        onError={handleError}
+        onChange={val => action('onChange')(val)}
+      />
+    );
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
