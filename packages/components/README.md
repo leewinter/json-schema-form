@@ -1,16 +1,47 @@
 # @json-schema-form/components
 
-Repository to simply demo different html editors
+Repository to host json schema to form functionality
 
 [Public Storybook](https://leewinter.github.io/json-schema-form)
 
-## Getting Started
+## Intro
 
-### Install packages
+The `JsonSchemaForm` component will render a form based on the provided schema.
 
-```shell
-npm i
+```jsx
+import JsonSchemaForm from '@leewinter/json-schema-form';
+
+...
+
+<JsonSchemaForm
+  formData={{
+    age: 43,
+    name: 'Lee Winter',
+  }}
+  onChange={function Xs() {}}
+  onError={function Xs() {}}
+  onSubmit={function Xs() {}}
+  schema={{
+    properties: {
+      age: {
+        title: 'Age',
+        type: 'number',
+      },
+      name: {
+        title: 'Name',
+        type: 'string',
+      },
+    },
+    title: 'User Info',
+    type: 'object',
+  }}
+  uiSchema={{}}
+/>
 ```
+
+![alt text](./docs//images//pre_filled_form_example.png 'Test Storybook')
+
+## Getting Started
 
 ### Storybook
 
@@ -19,15 +50,15 @@ Storybook can be used for manual component testing, or terminal testing of a hos
 #### Run Storybook
 
 ```shell
-npm run storybook
+bun run storybook
 ```
 
 #### Test Storybook (local)
 
-_Your Storybook needs to be running in a separate terminal before running this (`npm run storybook`)_
+_Your Storybook needs to be running in a separate terminal before running this (`bun run storybook`)_
 
 ```shell
-npm run test-storybook
+bun run test-storybook
 ```
 
 A distinction can be made between smoke tests, and tests that actually have interactions.
@@ -38,7 +69,7 @@ A distinction can be made between smoke tests, and tests that actually have inte
 _This will test the [currently deployed](https://leewinter.github.io/json-schema-form) instance of Storybook from the terminal_
 
 ```shell
-npm run test-storybook-github
+bun run test-storybook-github
 ```
 
 ### Playwright
@@ -48,7 +79,7 @@ Playwright can record multiple steps for interactions with any website, and is b
 #### Run Playwright
 
 ```shell
-npm run playwright
+bun run playwright
 ```
 
 ![alt text](./docs//images//npm_run_playwright.png 'Test Playwright')
@@ -58,7 +89,7 @@ npm run playwright
 _This will launcher a chromium browser_
 
 ```shell
-npm run playwright-headed
+bun run playwright-headed
 ```
 
 #### Run Playwright Headed
@@ -66,7 +97,7 @@ npm run playwright-headed
 _This will launcher a chromium browser_
 
 ```shell
-npm run playwright-ui
+bun run playwright-ui
 ```
 
 #### Run Playwright Codegen
@@ -74,7 +105,7 @@ npm run playwright-ui
 _This will launch the playwright test generator tool_
 
 ```shell
-npm run playwright-codegen-github
+bun run playwright-codegen-github
 ```
 
 <img src="./docs//images//storybook_vs_playwright.png" alt="Playwright vs Storybook" width="70%"/>
