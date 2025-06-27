@@ -1,5 +1,5 @@
 {
-  "name": "react-json-schema",
+  "name": "@json-schema-form/root",
   "private": "true",
   "module": "index.ts",
   "type": "module",

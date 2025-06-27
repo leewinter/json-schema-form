@@ -1,1 +1,1 @@
-export * from '@lib/components/quill-editor';
+export * from '@lib/components/json-schema-form';

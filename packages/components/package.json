@@ -1,5 +1,5 @@
 {
-  "name": "@react-json-schema/components",
+  "name": "@json-schema-form/components",
   "author": {
     "name": "Lee Winter",
     "email": "lee.winter@boxspark.co.uk"
@@ -14,7 +14,7 @@
     "type": "git"
   },
   "license": "MIT",
-  "description": "HTML editor examples",
+  "description": "Forms from JSON Schema using React and Material UI",
   "version": "0.0.1",
   "type": "module",
   "main": "dist/main.js",
@@ -32,11 +32,11 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
-    "test-storybook-github": "test-storybook --url https://vennersys.github.io/html-editors",
+    "test-storybook-github": "test-storybook --url https://leewinter.github.io/json-schema-form",
     "playwright": "npx playwright test",
     "playwright-ui": "npx playwright test --ui",
     "playwright-headed": "npx playwright test --headed",
-    "playwright-codegen-github": "npx playwright codegen vennersys.github.io/html-editors"
+    "playwright-codegen-github": "npx playwright codegen leewinter.github.io/json-schema-form"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -77,13 +77,14 @@
     "vite-plugin-lib-inject-css": "^2.0.0"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^6.4.12",
+    "@mui/x-tree-view": "^8.5.3",
     "@rjsf/core": "^5.24.12",
+    "@rjsf/mui": "^5.24.12",
     "@rjsf/utils": "^5.24.12",
-    "@rjsf/validator-ajv8": "^5.24.12",
-    "react-email-editor": "^1.7.11",
-    "react-paginate": "^8.2.0",
-    "react-quill": "^2.0.0"
+    "@rjsf/validator-ajv8": "^5.24.12"
   },
   "resolutions": {
     "@types/mime": "3.0.4"
