@@ -1,4 +1,4 @@
-# @leewinter/json-schema-form
+# @json-schema-form/components
 
 Repository to simply demo different html editors
 
@@ -69,8 +69,6 @@ _This will launcher a chromium browser_
 npm run playwright-ui
 ```
 
-<img src="./docs//images//npm_run_playwright_ui.png" alt="Test Playwright UI" width="70%"/>
-
 #### Run Playwright Codegen
 
 _This will launch the playwright test generator tool_
@@ -78,7 +76,5 @@ _This will launch the playwright test generator tool_
 ```shell
 npm run playwright-codegen-github
 ```
-
-<img src="./docs//images//npm_run_playwright-codegen.png" alt="Test Playwright Codegen" width="70%"/>
 
 <img src="./docs//images//storybook_vs_playwright.png" alt="Playwright vs Storybook" width="70%"/>
