@@ -40,7 +40,11 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.0",
+    "@mui/x-tree-view": "^8.5.0"
   },
   "devDependencies": {
     "@ast-grep/napi": "^0.34.4",
@@ -74,13 +78,13 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
     "vite-plugin-dts": "^3.7.3",
-    "vite-plugin-lib-inject-css": "^2.0.0"
-  },
-  "dependencies": {
+    "vite-plugin-lib-inject-css": "^2.0.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^6.4.12",
-    "@mui/x-tree-view": "^8.5.3",
+    "@mui/x-tree-view": "^8.5.3"
+  },
+  "dependencies": {
     "@rjsf/core": "^5.24.12",
     "@rjsf/mui": "^5.24.12",
     "@rjsf/utils": "^5.24.12",
