@@ -17,8 +17,8 @@
   "description": "Forms from JSON Schema using React and Material UI",
   "version": "0.0.1",
   "type": "module",
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

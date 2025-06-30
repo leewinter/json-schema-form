@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import JsonSchemaForm from './json-schema-form';
+import { JsonSchemaForm } from './json-schema-form';
 import { userEvent, within, expect, fn } from '@storybook/test';
 import Box from '@mui/material/Box';
 import { action } from '@storybook/addon-actions';
-import { RJSFSchema } from '@rjsf/utils/lib/types';
 
 const defaultHandlers = {
   onChange: (val: any) => action('onChange')(val),
@@ -228,18 +227,9 @@ export const Basic: StoryObj = {
       name: '',
       email: '',
     },
-  },
-  render: args => {
-    const schema = { ...args } as RJSFSchema;
-    return (
-      <JsonSchemaForm
-        {...args}
-        schema={schema}
-        onSubmit={val => handleSubmitBasic(val)}
-        onChange={val => action('onChange')(val)}
-        onError={val => action('onError')(val)}
-      />
-    );
+    onChange: (val: any) => action('onChange')(val),
+    onSubmit: (val: any) => handleSubmitBasic(val),
+    onError: (val: any) => action('onError')(val),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -279,18 +269,9 @@ export const ValidationErrorExample: StoryObj = {
       name: '',
       email: '',
     },
-  },
-  render: args => {
-    const schema = { ...args } as RJSFSchema;
-    return (
-      <JsonSchemaForm
-        {...args}
-        schema={schema}
-        onSubmit={handleSubmit}
-        onError={handleError}
-        onChange={val => action('onChange')(val)}
-      />
-    );
+    onChange: (val: any) => action('onChange')(val),
+    onSubmit: handleSubmit,
+    onError: handleError,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

@@ -1,1 +1,3 @@
-export * from '@lib/components/json-schema-form';
+import { JsonSchemaForm } from './json-schema-form';
+
+export { JsonSchemaForm };
