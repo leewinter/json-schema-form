@@ -18,7 +18,7 @@ export type JsonSchemaFormProps<T> = {
   onError?: FormProps<T>['onError'];
 };
 
-export default function JsonSchemaForm<T = unknown>({
+export function JsonSchemaForm<T = unknown>({
   schema,
   uiSchema = {},
   formData,

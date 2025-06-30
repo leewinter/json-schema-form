@@ -4,7 +4,8 @@
   "module": "index.ts",
   "type": "module",
   "workspaces": [
-    "packages/components"
+    "packages/components",
+    "packages/test-project"
   ],
   "scripts": {
     "clean": "rm -rf node_modules packages/components/node_modules packages/b/node_modules bun.lockb packages/components/bun.lockb packages/b/bun.lockb"
