@@ -9,4 +9,4 @@ export type JsonSchemaFormProps<T> = {
     onSubmit?: FormProps<T>['onSubmit'];
     onError?: FormProps<T>['onError'];
 };
-export default function JsonSchemaForm<T = unknown>({ schema, uiSchema, formData, onChange, onSubmit, onError, }: JsonSchemaFormProps<T>): import("@emotion/react/jsx-runtime").JSX.Element;
+export declare function JsonSchemaForm<T = unknown>({ schema, uiSchema, formData, onChange, onSubmit, onError, }: JsonSchemaFormProps<T>): import("@emotion/react/jsx-runtime").JSX.Element;

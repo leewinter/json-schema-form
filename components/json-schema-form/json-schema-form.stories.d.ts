@@ -1,6 +1,5 @@
 import { StoryObj } from '@storybook/react';
-import { default as JsonSchemaForm } from './json-schema-form';
-import { RJSFSchema } from '@rjsf/utils/lib/types';
+import { JsonSchemaForm } from './json-schema-form';
 
 declare const meta: {
     title: string;
@@ -16,11 +15,11 @@ declare const meta: {
         onError: (val: any) => void;
     };
     decorators: ((Story: import('@storybook/core/csf').PartialStoryFn<import('@storybook/react').ReactRenderer, {
-        schema: RJSFSchema;
+        schema: import('@rjsf/utils').RJSFSchema;
         uiSchema?: import('@rjsf/utils').UiSchema | undefined;
         formData?: unknown;
-        onChange?: ((data: import('@rjsf/core').IChangeEvent<unknown, RJSFSchema, any>, id?: string) => void) | undefined;
-        onSubmit?: ((data: import('@rjsf/core').IChangeEvent<unknown, RJSFSchema, any>, event: import('../../../../../node_modules/react').FormEvent<any>) => void) | undefined;
+        onChange?: ((data: import('@rjsf/core').IChangeEvent<unknown, import('@rjsf/utils').RJSFSchema, any>, id?: string) => void) | undefined;
+        onSubmit?: ((data: import('@rjsf/core').IChangeEvent<unknown, import('@rjsf/utils').RJSFSchema, any>, event: import('../../../../../node_modules/react').FormEvent<any>) => void) | undefined;
         onError?: ((errors: import('@rjsf/utils').RJSFValidationError[]) => void) | undefined;
     }>) => import("@emotion/react/jsx-runtime").JSX.Element)[];
 };
