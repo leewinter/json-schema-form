@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "@json-schema-form/components": "workspace:^"
+    "@json-schema-form/components": "file:../components"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
