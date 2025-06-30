@@ -2,15 +2,11 @@ name: Deploy Storybook
 
 on:
   push:
-    branches: [main] # or 'master', adjust as needed
+    branches: [main]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: packages/components
 
     steps:
       - name: Checkout repo
@@ -19,7 +15,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Adjust as needed
+          node-version: 20
           cache: "npm"
 
       - name: Install dependencies
@@ -27,11 +23,10 @@ jobs:
 
       - name: Build Storybook
         run: npm run build-storybook
+        working-directory: packages/components
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: packages/components/storybook-static
-          # Optional: remove if deploying from a branch other than main
-          publish_branch: gh-pages
