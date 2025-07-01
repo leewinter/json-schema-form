@@ -39,16 +39,20 @@
     "playwright-codegen-github": "npx playwright codegen leewinter.github.io/json-schema-form"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.0",
-    "@mui/x-tree-view": "^8.5.0"
+    "@mui/x-tree-view": "^8.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@ast-grep/napi": "^0.34.4",
     "@chromatic-com/storybook": "^1.5.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^6.4.12",
+    "@mui/x-tree-view": "^8.5.3",
     "@playwright/test": "^1.50.1",
     "@storybook/addon-essentials": "8.6.14",
     "@storybook/addon-interactions": "8.6.14",
@@ -78,11 +82,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
     "vite-plugin-dts": "^3.7.3",
-    "vite-plugin-lib-inject-css": "^2.0.0",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/material": "^6.4.12",
-    "@mui/x-tree-view": "^8.5.3"
+    "vite-plugin-lib-inject-css": "^2.0.0"
   },
   "dependencies": {
     "@rjsf/core": "^5.24.12",

@@ -1,11 +1,5 @@
 import "./App.css";
-import {
-  JsonSchemaForm,
-  compactTheme,
-  lightTheme,
-  playfulTheme,
-  darkTheme,
-} from "@json-schema-form/components/lib";
+import { darkTheme, JsonSchemaForm } from "@json-schema-form/components/lib";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import Box from "@mui/material/Box";
 import type { RJSFSchema, UiSchema } from "@rjsf/utils";

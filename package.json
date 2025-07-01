@@ -9,5 +9,8 @@
   ],
   "scripts": {
     "clean": "rm -rf node_modules packages/components/node_modules packages/b/node_modules bun.lockb packages/components/bun.lockb packages/b/bun.lockb"
+  },
+  "devDependencies": {
+    "vite": "^5.1.6"
   }
 }
