@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { darkTheme, JsonSchemaForm } from "@json-schema-form/components/lib";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import Box from "@mui/material/Box";
 import type { RJSFSchema, UiSchema } from "@rjsf/utils";
+import { Geolocation } from "@capacitor/geolocation";
+
+async function requestGeolocation() {
+  const permission = await Geolocation.requestPermissions();
+  console.log("Permission result:", permission);
+}
 
 // --- Schema ---
 export const complexSchema: RJSFSchema = {
@@ -114,14 +120,22 @@ export const complexFormData = {
 };
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [coords, setCoords] = useState<GeolocationCoordinates | null>(null);
 
+  useEffect(() => {
+    requestGeolocation();
+  }, []);
+
+  const updateCoords = async () => {
+    const position = await Geolocation.getCurrentPosition();
+    if (position.coords) setCoords(position.coords as GeolocationCoordinates);
+  };
   return (
     <>
       <h1>Capacitor App</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => updateCoords()}>
+          coords {coords ? `${coords.latitude} ${coords.longitude}` : "N/A"}
         </button>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
