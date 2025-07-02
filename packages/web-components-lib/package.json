@@ -1,5 +1,5 @@
 {
-  "name": "test-project",
+  "name": "web-components-lib",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,13 +7,16 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "static": "bash ./scripts/static.sh"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@json-schema-form/components": "file:../components",
+    "@mui/material": "^7.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "@json-schema-form/components": "file:../components"
+    "react-to-webcomponent": "^2.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
@@ -26,6 +29,6 @@
     "globals": "^16.2.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
-    "vite": "^5.1.6"
+    "vite": "^7.0.0"
   }
 }

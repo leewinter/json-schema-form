@@ -1,4 +1,5 @@
-import { withTheme, FormProps } from '@rjsf/core';
+import { withTheme } from '@rjsf/core';
+import type { FormProps } from '@rjsf/core';
 import { Theme as MuiTheme } from '@rjsf/mui';
 import validator from '@rjsf/validator-ajv8';
 import type { RJSFSchema, UiSchema } from '@rjsf/utils';

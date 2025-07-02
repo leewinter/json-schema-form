@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Static</title>
+
+  <script src="./web-components-lib.umd.cjs"></script>
+  <script>
+    // Define the complex schema
+    var complexSchema = {
+      type: "object",
+      properties: {
+        name: { type: "string", title: "Name" },
+        age: { type: "integer", title: "Age" },
+        address: {
+          type: "object",
+          properties: {
+            street: { type: "string", title: "Street" },
+            city: { type: "string", title: "City" }
+          }
+        },
+        hobbies: {
+          type: "array",
+          items: { type: "string" },
+          title: "Hobbies"
+        }
+      },
+      required: ["name", "age"]
+    };
+
+    // Define the UI schema
+    var complexUiSchema = {
+      address: {
+        street: { "ui:title": "Street Address" },
+        city: { "ui:title": "City Name" }
+      },
+      hobbies: {
+        items: { "ui:title": "Hobby" }
+      }
+    };
+
+    // Initial form data
+    var complexFormData = {
+      name: "",
+      age: null,
+      address: {
+        street: "",
+        city: ""
+      },
+      hobbies: []
+    };
+
+    var onSubmit = (val) => {
+      console.log("Submitted:", val);
+    };
+
+    var onChange = (val) => {
+      console.log("Changed:", val);
+    };
+
+    var onError = (val) => {
+      console.log("Errors:", val);
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const root = document.getElementById('root');
+      const form = document.createElement('json-schema-form');
+      form.schema = complexSchema;
+      form.uiSchema = complexUiSchema;
+      form.formData = complexFormData;
+      form.onSubmit = onSubmit;
+      form.onChange = onChange;
+      form.onError = onError;
+
+      root.appendChild(form);
+    });
+  </script>
+</head>
+
+<body>
+  static web components example
+  <div id="root" name="root"></div>
+</body>
+
+</html>
