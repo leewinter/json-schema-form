@@ -15,9 +15,11 @@
     "@capacitor/core": "^7.4.0",
     "@capacitor/geolocation": "^7.1.2",
     "@capacitor/local-notifications": "^7.0.1",
+    "@capacitor/status-bar": "^7.0.1",
     "@json-schema-form/components": "*",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3"
   },
   "devDependencies": {
     "@capacitor/cli": "^7.4.0",
