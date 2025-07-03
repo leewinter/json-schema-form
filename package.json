@@ -5,7 +5,8 @@
   "type": "module",
   "workspaces": [
     "packages/components",
-    "packages/test-project"
+    "packages/test-project",
+    "packages/capacitor-mobile-app"
   ],
   "scripts": {
     "clean": "rm -rf node_modules packages/components/node_modules packages/b/node_modules bun.lockb packages/components/bun.lockb packages/b/bun.lockb"

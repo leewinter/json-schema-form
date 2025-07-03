@@ -1,5 +1,5 @@
 {
-  "name": "web-components-lib",
+  "name": "capacitor-mobile-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,18 +7,19 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:android": "bun cap run android"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
+    "@capacitor/android": "^7.4.0",
+    "@capacitor/core": "^7.4.0",
+    "@capacitor/geolocation": "^7.1.2",
     "@json-schema-form/components": "*",
-    "@mui/material": "^7.2.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-to-webcomponent": "^2.0.1"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^7.4.0",
     "@eslint/js": "^9.29.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
