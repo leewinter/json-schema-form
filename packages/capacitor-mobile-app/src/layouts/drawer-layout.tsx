@@ -129,7 +129,7 @@ export default function MiniDrawer(): React.ReactElement {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} id="app-bar">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -156,7 +156,7 @@ export default function MiniDrawer(): React.ReactElement {
       </AppBar>
 
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
+        <DrawerHeader id="app-drawer">
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />

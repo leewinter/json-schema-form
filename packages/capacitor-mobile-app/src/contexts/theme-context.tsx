@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import { CssBaseline, useMediaQuery } from "@mui/material";
+import { GlobalStyles } from "@mui/material";
 
 export type ThemeType = "light" | "dark";
 
@@ -65,6 +66,17 @@ export function ThemeProviderWrapper({
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <CssBaseline />
+        <GlobalStyles
+          styles={{
+            body: {
+              paddingTop: "env(safe-area-inset-top)",
+              paddingBottom: "env(safe-area-inset-bottom)",
+            },
+            "#app-bar, #app-drawer": {
+              paddingTop: "env(safe-area-inset-top)",
+            },
+          }}
+        />
         {children}
       </ThemeProvider>
     </ThemeContext.Provider>

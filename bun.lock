@@ -15,6 +15,7 @@
         "@capacitor/core": "^7.4.0",
         "@capacitor/geolocation": "^7.1.2",
         "@capacitor/local-notifications": "^7.0.1",
+        "@capacitor/status-bar": "^7.0.1",
         "@json-schema-form/components": "*",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
@@ -209,6 +210,8 @@
     "@capacitor/geolocation": ["@capacitor/geolocation@7.1.2", "", { "dependencies": { "@capacitor/synapse": "^1.0.1" }, "peerDependencies": { "@capacitor/core": ">=7.0.0" } }, "sha512-J++OuOpn6Bjweo7SZ+jwI/dhVF9DNw6Wx0UHgQ4qfrATqmNKGNZ/BUljGhXiKJceSx2GIhfrYS7BYqo3uWibgQ=="],
 
     "@capacitor/local-notifications": ["@capacitor/local-notifications@7.0.1", "", { "peerDependencies": { "@capacitor/core": ">=7.0.0" } }, "sha512-GJewoiqiTLXNNRxqeJDi6vxj1Y37jLFI3KSdAM2Omvxew4ewyBSCjwOtXMQaEg+lvzGHtK6FPrSc2v/2EcL0wA=="],
+
+    "@capacitor/status-bar": ["@capacitor/status-bar@7.0.1", "", { "peerDependencies": { "@capacitor/core": ">=7.0.0" } }, "sha512-iDv3mXYo9CdxYRVwt3/pRyuk25p7Sn4GfaS/zMZyVIqTzsvKLCIIH3GdKK+ta+nsNcAVpCw/t5jFEBt1D18ctA=="],
 
     "@capacitor/synapse": ["@capacitor/synapse@1.0.3", "", {}, "sha512-7gGvuQ1NlSCwnjdIMkry+/meyUxHTnsVodRxOTOerLAoAyvtSnCp1rKyLjt9kCz9Lf7Y/wUbCe+AWbAvfxL5bA=="],
 
