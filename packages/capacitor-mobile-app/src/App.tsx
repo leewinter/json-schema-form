@@ -1,14 +1,17 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { darkTheme, JsonSchemaForm } from "@json-schema-form/components/lib";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import Box from "@mui/material/Box";
 import type { RJSFSchema, UiSchema } from "@rjsf/utils";
 import { Geolocation } from "@capacitor/geolocation";
+import { LocalNotifications } from "@capacitor/local-notifications";
 
-async function requestGeolocation() {
-  const permission = await Geolocation.requestPermissions();
-  console.log("Permission result:", permission);
+async function requestPermissions() {
+  const notificationPermission = await LocalNotifications.requestPermissions();
+  const geoLocationPermission = await Geolocation.requestPermissions();
+  console.log("Permission result:", geoLocationPermission);
+  console.log("Notification permission result:", notificationPermission);
 }
 
 // --- Schema ---
@@ -119,24 +122,44 @@ export const complexFormData = {
   },
 };
 
-function App() {
-  const [coords, setCoords] = useState<GeolocationCoordinates | null>(null);
+const sendNotification = async (coords: GeolocationCoordinates) => {
+  const id = Math.floor(Date.now() / 1000);
+  return await LocalNotifications.schedule({
+    notifications: [
+      {
+        title: "Geolocation Update",
+        body: `${coords.latitude} ${coords.longitude}`,
+        id: id,
+        schedule: { at: new Date(Date.now() + 1000 * 1) }, // 1 seconds later
+        sound: undefined,
+        attachments: undefined,
+        actionTypeId: "",
+        extra: null,
+      },
+    ],
+  });
+};
 
+function App() {
   useEffect(() => {
-    requestGeolocation();
+    requestPermissions();
   }, []);
 
-  const updateCoords = async () => {
+  const notifyLocation = async () => {
     const position = await Geolocation.getCurrentPosition();
-    if (position.coords) setCoords(position.coords as GeolocationCoordinates);
+    if (position.coords) {
+      const scheduleResult = await sendNotification(
+        position.coords as GeolocationCoordinates
+      );
+      console.log("scheduleResult", scheduleResult);
+    }
   };
+
   return (
     <>
       <h1>Capacitor App</h1>
       <div className="card">
-        <button onClick={() => updateCoords()}>
-          coords {coords ? `${coords.latitude} ${coords.longitude}` : "N/A"}
-        </button>
+        <button onClick={() => notifyLocation()}>Notify Location</button>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline />
           <Box sx={{ maxWidth: 700, width: "100%", padding: 2 }}>
